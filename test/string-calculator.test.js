@@ -4,15 +4,6 @@
 
 import StringCalculator from "../index.js";
 
-// StringCalculator.mockImplementation(() => {
-//   return {
-//     setUpElements: setUpElements,
-//     setOutput: setOutput,
-//     setInput: setInput,
-//     setError: setError,
-//   };
-// });
-
 describe("String Calculator", () => {
   let stringCalculator;
 
@@ -28,6 +19,7 @@ describe("String Calculator", () => {
     stringCalculator.setOutput = () => {};
     stringCalculator.setInput = () => {};
     stringCalculator.setError = () => {};
+    stringCalculator.hideOutput = () => {};
   });
 
   it("should return 0 if input value is empty string", () => {
