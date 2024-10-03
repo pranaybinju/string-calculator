@@ -1,9 +1,33 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import StringCalculator from "../index.js";
+
+// StringCalculator.mockImplementation(() => {
+//   return {
+//     setUpElements: setUpElements,
+//     setOutput: setOutput,
+//     setInput: setInput,
+//     setError: setError,
+//   };
+// });
 
 describe("String Calculator", () => {
   let stringCalculator;
+
   beforeEach(() => {
+    const setUpElementsMock = jest
+      .spyOn(StringCalculator.prototype, "setUpElements")
+      .mockImplementation(() => {
+        console.log("mocked setUpElements");
+      });
+
     stringCalculator = new StringCalculator();
+
+    stringCalculator.setOutput = () => {};
+    stringCalculator.setInput = () => {};
+    stringCalculator.setError = () => {};
   });
 
   it("should return 0 if input value is empty string", () => {
