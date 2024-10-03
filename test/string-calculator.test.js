@@ -28,4 +28,10 @@ describe("String Calculator", () => {
     stringCalculator.addString();
     expect(stringCalculator.result).toBe(10);
   });
+
+  it("should return the sum of input value if combination of \n separated and comma-separated input values is sent", () => {
+    stringCalculator.value = "1\n2\n3\n4,5,6\n7";
+    stringCalculator.addString();
+    expect(stringCalculator.result).toBe(28);
+  });
 });
