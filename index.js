@@ -2,6 +2,7 @@ class StringCalculator {
   constructor() {
     this.value = "";
     this.result = 0;
+    this.delimiters = /,|\n/;
   }
 
   addString() {
@@ -10,9 +11,8 @@ class StringCalculator {
       return;
     }
 
-    const num = this.value.split(",");
-
-    this.result = num.reduce((acc, item) => {
+    const nums = this.value.split(this.delimiters);
+    this.result = nums.reduce((acc, item) => {
       acc += parseInt(item);
       return acc;
     }, 0);

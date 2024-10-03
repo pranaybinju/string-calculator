@@ -16,4 +16,16 @@ describe("String Calculator", () => {
     stringCalculator.addString();
     expect(stringCalculator.result).toBe(parseInt(stringCalculator.value));
   });
+
+  it("should return the sum of input value if comma-separated input values is sent", () => {
+    stringCalculator.value = "1,5";
+    stringCalculator.addString();
+    expect(stringCalculator.result).toBe(6);
+  });
+
+  it("should return the sum of input value if \n separated input values is sent", () => {
+    stringCalculator.value = "1\n2\n3\n4";
+    stringCalculator.addString();
+    expect(stringCalculator.result).toBe(10);
+  });
 });
