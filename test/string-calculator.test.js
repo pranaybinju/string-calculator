@@ -34,4 +34,10 @@ describe("String Calculator", () => {
     stringCalculator.addString();
     expect(stringCalculator.result).toBe(28);
   });
+
+  it("should successfully return the sum of input value if custom delimiter ; is specified", () => {
+    stringCalculator.value = "//;\n1;2;3;4,5,6;7";
+    stringCalculator.addString();
+    expect(stringCalculator.result).toBe(28);
+  });
 });
