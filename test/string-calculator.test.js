@@ -40,4 +40,12 @@ describe("String Calculator", () => {
     stringCalculator.addString();
     expect(stringCalculator.result).toBe(28);
   });
+
+  it("should throw Error if negative numbers are passed in input value", () => {
+    stringCalculator.value = "-1,-2,3";
+
+    expect(() => stringCalculator.addString()).toThrow(
+      new Error("Negative numbers are not allowed: -1,-2")
+    );
+  });
 });
