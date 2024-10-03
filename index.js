@@ -61,6 +61,7 @@ class StringCalculator {
       this.setOutput(this.result);
     } catch (e) {
       this.setError(e.message);
+      this.hideOutput();
       console.log(e);
       throw e;
     }
@@ -92,6 +93,10 @@ class StringCalculator {
 
   showOutput() {
     this.outputElem.parentNode.style.visibility = "visible";
+  }
+
+  hideOutput() {
+    this.outputElem.parentNode.style.visibility = "hidden";
   }
 
   resetOutput() {
